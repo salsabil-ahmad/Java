@@ -1,0 +1,30 @@
+package QueueProblem;
+
+public class QueueBasic {
+	private int[] data;
+	private static final int default_size=10;
+	int end=0;
+	
+	public QueueBasic() {
+		this(default_size);
+	}
+
+	public QueueBasic(int size) {
+		this.data=new int[size];
+	}
+	
+	public boolean isFull() {
+		return end==data.length;
+	}
+	public boolean isEmpty() {
+		return end==0;
+	}
+	
+	public boolean insert(int item) {
+		if (isFull()) {
+			return false;
+		}
+		data[end++]=item;
+		return true;
+	}
+}

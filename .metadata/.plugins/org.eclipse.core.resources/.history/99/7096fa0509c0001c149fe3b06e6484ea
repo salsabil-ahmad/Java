@@ -1,0 +1,10 @@
+package LLPractice1;
+
+public class FirstLList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

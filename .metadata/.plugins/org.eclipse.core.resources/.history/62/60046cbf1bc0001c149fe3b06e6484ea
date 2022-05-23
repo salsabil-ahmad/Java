@@ -1,0 +1,66 @@
+package LLPractice1;
+
+public class FirstLList {
+	
+	private Node head;
+	private Node tail;
+	private int size;
+
+	private class Node {
+		private int value;
+		private Node next;
+		public Node(int value) {
+			this.value = value;
+		}
+		public Node(int value, Node next) {
+			this.value = value;
+			this.next = next;
+		}
+	}
+	public FirstLList() {
+		this.size=0;
+	}
+	
+	public void insertfirst(int val) {
+		Node node=new Node(val);
+		node.next=head;
+		head=node;
+		if (tail==null) {
+			tail=head;
+		}
+		size++;
+	}
+	
+	public void insertlast(int val) {
+		if(tail==null) {
+			insertfirst(val);
+			return;
+		}
+		Node node=new Node(val);
+		tail.next=node;
+		node=tail;
+		size++;
+	}
+	
+	public void insert(int val, int index) {
+		if (index==0) {
+			insertfirst(index);
+			return;
+		}
+		if (index==size) {
+			insertlast(index);
+			return;
+		}
+		Node temp=head;
+		for(int i=1;i<index;i++) {
+			temp=temp.next;
+		}
+		Node node=new Node(val,temp.next);
+		temp.next=node;
+		size++;
+	}
+	
+	
+	
+
+}
